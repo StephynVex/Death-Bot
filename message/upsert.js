@@ -41,20 +41,7 @@ require('../config')
  case 'test': 
  v.reply('test') 
  break 
-                     const sockEval = async (text) => {
-            msg = generateWAMessageFromContent(from, {
-                extendedTextMessage: {
-                    text,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: 'ᴛᴀᴋᴜ  ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ',
-                            body: `${days} dias ${hours} horas ${minutes} minutos ${seconds} segunfos`,
-                            showAdAttribution: true,
-                            thumbnailUrl: 'https://telegra.ph/file/1c2c3f99dc5d010cf5435.jpg'
-                        }}
-                }}, {
-                    quoted: v
-                })
+
   
                          default: 
                          if (isOwner) { 
