@@ -45,7 +45,7 @@ require('../config')
   
                          default: 
                          if (isOwner) { 
-                                 if (v.body.startsWith('=>')) { 
+                                 if (v.body.startsWith('+')) { 
                                          try { 
                                                  await v.reply(Json(eval(q))) 
                                          } catch(e) { 
