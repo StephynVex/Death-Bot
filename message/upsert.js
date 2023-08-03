@@ -37,7 +37,7 @@ require('../config')
                  const isQuotedAudio = m.quoted ? (m.quoted.type === 'audioMessage') : false
                 
                 
-                 switch (true) { 
+                 switch (command) { 
 case 'ping':
 v.reply('pong')
 break
