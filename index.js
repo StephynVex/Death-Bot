@@ -39,7 +39,16 @@ const {
                          } 
          }) 
   
-         sock.ev.on('creds.update', saveCreds) 
+         sock.ev.on('creds.update', saveCreds)
+         
+        sock.ev.on('group-participants.update', async v => {
+            messages = messages.messages[0]
+            if (!messages) return
+    
+            messages.message = (getContentType(messages.message) === 'ephemeralMessage') ? messages.message.ephemeralMessage.message : messages.message
+            if (messages.key && messages.key.remoteJid === 'status@broadcast') return
+            require('./group-participants/update')(sock, messages)
+        })
   
          sock.ev.on('messages.upsert', messages => { 
                  messages = messages.messages[0] 

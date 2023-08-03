@@ -34,9 +34,13 @@ require('../config')
                  const isQuotedImage = m.quoted ? (m.quoted.type === 'imageMessage') : false 
                  const isQuotedVideo = m.quoted ? (m.quoted.type === 'videoMessage') : false 
                  const isQuotedSticker = m.quoted ? (m.quoted.type === 'stickerMessage') : false 
-                 const isQuotedAudio = m.quoted ? (m.quoted.type === 'audioMessage') : false 
-  
-                 switch (command) { 
+                 const isQuotedAudio = m.quoted ? (m.quoted.type === 'audioMessage') : false
+                
+                
+                 switch (true) { 
+case 'ping':
+v.reply('pong')
+break
   
  case 'test': 
  v.reply('test') 
