@@ -21,9 +21,9 @@ module.exports = async(sock, update) => {
                             title: `DEATH BOT`,
                             body: ``,
                             sourceUrl: '',
-                            renderLargerThumbnail: true, 
+                            renderLargerThumbnail: false, 
                             mediaType: 1, 
-                            thumbnailUrl: ''
+                            thumbnailUrl: 'https://telegra.ph/file/d6fd8fbc2f7cdd01d77c1.jpg'
                         }
                     }
                 });
@@ -36,9 +36,9 @@ module.exports = async(sock, update) => {
                             title: `DEATH BOT`,
                             body: ``,
                             sourceUrl: '',
-                            renderLargerThumbnail: true, 
+                            renderLargerThumbnail: false, 
                             mediaType: 1, 
-                            thumbnailUrl: ''
+                            thumbnailUrl: 'https://telegra.ph/file/d6fd8fbc2f7cdd01d77c1.jpg'
                         },
                     }
                 });
