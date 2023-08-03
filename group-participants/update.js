@@ -1,6 +1,6 @@
 
 
-module.exports = async(sock, v, message) => {
+module.exports = async(sock, update) => {
     try {
         const groupId = update.id;
         const participants = update.participants;
