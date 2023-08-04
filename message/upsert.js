@@ -45,6 +45,41 @@ break
  case 'test': 
  v.reply('test') 
  break 
+                                     case body.startsWith('tag'): // TAG ----------------------------------- 
+                 case body.startsWith('Tag'): 
+                 case body.startsWith('TAG'): 
+                     if (from.endsWith('@g.us')) { 
+                         const groupMetadata = await sock.groupMetadata(from); 
+                         console.log('groupMetadata:', groupMetadata); 
+                         const groupAdmins = groupMetadata.participants.filter(participant => participant.isAdmin).map(admin => admin.id); 
+                         const isGroupAdmin = groupAdmins.includes(sender) || sender === owner.number; 
+  
+                         if (isGroupAdmin) { 
+                             const mentionedJids = groupMetadata.participants.map(participant => participant.id); 
+                             console.log('mentionedJids:', mentionedJids); 
+                             if (mentionedJids && mentionedJids.length > 0) { 
+                                 const message = body.slice(4).trim(); 
+                                 if (message.length > 0) { 
+                                     const media = v.message.imageMessage || v.message.videoMessage || v.message.audioMessage || v.message.stickerMessage || v.message.pdfMessage; 
+                                     if (media) { 
+                                         takuMsg(from, media, mentionedJid: [ mentionedJid ] 
+                                         }); 
+                                     } else { 
+                                         takuMsg(from, {text, contextInfo: {mentionedJid:[mentionedJids]}}); 
+                                     } 
+                                 } else { 
+                                     await messageTaku('El mensaje está vacío. Por favor, incluye un mensaje después del comando "tag".'); 
+                                 } 
+                             } else { 
+                                 await messageTaku('No se encontraron usuarios en el grupo para mencionar.'); 
+                             } 
+                         } else { 
+                             await messageTaku('Este comando solo puede ser utilizado por los administradores del grupo o el propietario.'); 
+                         } 
+                     } else { 
+                         await messageTaku('Este comando solo puede usarse en grupos.'); 
+                     } 
+                     break
 
   
                          default: 
