@@ -44,7 +44,26 @@ break
   
  case 'test': 
  v.reply('test') 
- break 
+ break
+
+  // Función para manejar mensajes recibidos
+function handleMessage(message) {
+  switch (message) {
+    case 'leave':
+      // Lógica para abandonar el grupo
+      // Utiliza la API de WhatsApp para realizar esta acción
+      // Por ejemplo: api.leaveGroup(groupId);
+      break;
+    default:
+      // Lógica para manejar otros comandos o mensajes
+      break;
+  }
+}
+
+// Ejemplo de uso
+const receivedMessage = "leave";
+handleMessage(receivedMessage);
+                     
  
 
   
