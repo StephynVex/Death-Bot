@@ -50,12 +50,9 @@ break
 function handleMessage(message) {
   switch (message) {
     case 'leave':
-      // Lógica para abandonar el grupo
-      // Utiliza la API de WhatsApp para realizar esta acción
-      // Por ejemplo: api.leaveGroup(groupId);
-      break;
-    default:
-      // Lógica para manejar otros comandos o mensajes
+      
+     break
+    default: api.leaveGroup('@.us');
       break;
   }
 }
